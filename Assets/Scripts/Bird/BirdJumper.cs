@@ -32,7 +32,7 @@ public class BirdJumper : MonoBehaviour
     public void Reset()
     {
         transform.SetPositionAndRotation(_startPosition, Quaternion.identity);
-        _rigidbody.velocity = Vector2.zero;
+        _rigidbody.linearVelocity = Vector2.zero;
     }
 
     public void TryJump()
@@ -41,7 +41,7 @@ public class BirdJumper : MonoBehaviour
         {
             _animations.SetJump();
 
-            _rigidbody.velocity = new Vector2(_speed, _tapForce);
+            _rigidbody.linearVelocity = new Vector2(_speed, _tapForce);
             transform.rotation = _maxRotation;
         }
 
